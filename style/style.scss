@@ -1,0 +1,65 @@
+/* Resets */
+* {
+  box-sizing: border-box;
+}
+
+$btn-font-size: 2rem;
+$result-font-size: 2.5rem;
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: gray;
+}
+
+div#calc {
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: .5rem;
+  grid-auto-flow: dense;
+
+  background-color: #ddd;
+  border: 2px solid #111;
+  width: 30rem;
+  padding: 1rem;
+  box-shadow: #222 1rem;
+
+  input#result {
+    grid-column:  1 / -1;
+    font-size: $result-font-size;
+    width: 100%;
+    text-align: right;
+  }
+
+  button {
+    //display: inline-block;
+    font-size: $btn-font-size;
+    //width: 4ex;
+    height: 2*$btn-font-size;
+    background-color: #eee;
+
+    &.op {
+      // Operations go in right column
+      grid-column-end: -1;
+    }
+    &.sm {
+      font-size: 80%
+    }
+    &:hover {
+      background-color: #4ae;
+      border: #09e solid .1rem;
+    }
+    &:active {
+      background-color: #6cf;
+      border: #8ef solid .1rem;
+    }
+  }
+
+
+  * {
+    border: none;
+  }
+}
